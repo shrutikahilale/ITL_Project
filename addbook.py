@@ -15,6 +15,15 @@ def bookregister():
 
     status = status.lower()
 
+    # adding validations
+    if bid.isnumeric() and author.isalpha() and title.isalpha and (status == "avail" or status == "issued"):
+        print()
+    else:
+        messagebox.showinfo('Error', 'Invalid entry!')
+        root.destroy()
+        return
+
+
     # mongod code for insertion operation:
     bk_details = {
         'b_id': bid,
